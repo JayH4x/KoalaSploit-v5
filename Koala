@@ -267,7 +267,7 @@ spawn(function()
 			end
 			if loweredText == "!hitlerify all" then
 				function say(i) game.Players:Chat(i) end
-				say("char all 277516672")
+				say("char all 654356484")
 				say("music 3099248572")
 				wait(0.15)
 				say("time 0")
@@ -281,9 +281,24 @@ spawn(function()
 	end)
 end)
 
+spawn(function()
+	game.Players.LocalPlayer.Chatted:Connect(function(epic)
+		if epic:split(" ")[1]:lower() == "!hiddenmusic" then
+			local id = epic:split(" ")[2]
+			hidemusic(id)
+		end
+	end)
+	game.Players.LocalPlayer.Chatted:Connect(function(epic2)
+		if epic2:split(" ")[1]:lower() == "!sm" then
+			local msg = epic2:split(" ")[2]
+			servermessage(msg)
+		end
+	end)
+end)
+
 function playsong(songid, number)
 	spawn(function()
-		msg("Now Playing Song Number " ..number)
+		game.Players:Chat("h \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n [KS RADIO] \n Current Track: KS V5 \n Playing Song " ..number.. " \n ------⚪------------- \n ▶ ⏸ ⏭"  )
 		game.Players:Chat("music " ..songid)
 	end)
 end
@@ -1287,6 +1302,7 @@ function colorallrandom()
 end
 
 function colorallwhite()
+	local clr = Color3.new(1, 1, 1) -- Change This For Other Colors
 	game.Players:Chat("gear me 00000000000000000018474459")
 	wait(1)
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.PaintBucket)
@@ -1297,7 +1313,6 @@ function colorallwhite()
 	local bbrick = game:GetService("Workspace").Terrain["_Game"].Workspace["Building Bricks"]:GetChildren()
 	local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren()
 	local bplate = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate
-	local clr = Color3.new(1, 1, 1)
 	local v1 =
 		{
 			["Part"] = bplate,
@@ -1307,7 +1322,6 @@ function colorallwhite()
 	for i, v in pairs(house) do
 		coroutine.wrap(function()
 			if v:IsA("Part") then
-				local clr = Color3.new(1, 1, 1)
 				local v1 =
 					{
 						["Part"] = v,
@@ -1320,7 +1334,6 @@ function colorallwhite()
 	for i, v in pairs(admindiv) do
 		coroutine.wrap(function()
 			if v:IsA("Part") then
-				local clr = Color3.new(1, 1, 1)
 				local v1 =
 					{
 						["Part"] = v,
@@ -1333,7 +1346,6 @@ function colorallwhite()
 	for i, v in pairs(obox) do
 		coroutine.wrap(function()
 			if v:IsA("Part") then
-				local clr = Color3.new(1, 1, 1)
 				local v1 =
 					{
 						["Part"] = v,
@@ -1346,7 +1358,6 @@ function colorallwhite()
 	for i, v in pairs(bbrick) do
 		coroutine.wrap(function()
 			if v:IsA("Part") then
-				local clr = Color3.new(1, 1, 1)
 				local v1 =
 					{
 						["Part"] = v,
@@ -1360,7 +1371,6 @@ function colorallwhite()
 		local head = v.Head
 		coroutine.wrap(function()
 			if head:IsA("Part") then
-				local clr = Color3.new(1, 1, 1)
 				local v1 =
 					{
 						["Part"] = head,
@@ -1370,4 +1380,28 @@ function colorallwhite()
 			end
 		end)()
 	end
+end
+
+function hidemusic(musicid)
+	spawn(function()
+	game.Players:Chat("gear me 212641536")
+	wait(0.15)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-44.1329803, 7.02999592, 68.6882401)
+	wait(0.1)
+	game.Players:Chat("size me 0.3")
+	game.Players:Chat("size me 0.3")
+	wait(0.60)
+	game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.SuperFlyGoldBoombox)
+	wait(0.25)
+	local args = {
+		[1] = "PlaySong",
+		[2] = musicid
+	}
+
+	game:GetService("Players").LocalPlayer.Character.SuperFlyGoldBoombox.Remote:FireServer(unpack(args))
+	wait(0.15)
+	game.Players:Chat("name me ")
+	game.Players:Chat("clone me")
+	game.Players:Chat("reset me")
+end)
 end
